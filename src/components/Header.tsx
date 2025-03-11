@@ -1,8 +1,10 @@
+"use client";
+
 import React from 'react';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-white shadow-sm py-4 mb-8">
+    <header className="bg-white dark:bg-gray-800 shadow-sm py-4 mb-8">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -20,14 +22,14 @@ const Header: React.FC = () => {
                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
               />
             </svg>
-            <h1 className="text-xl font-bold text-gray-800">Simple Todo App</h1>
+            <h1 className="text-xl font-bold text-gray-800 dark:text-white">Simple Todo App</h1>
           </div>
           <div>
             <a
               href="https://github.com/sandeepkru/simple-todo-app"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900"
+              className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
             >
               <svg
                 className="w-6 h-6"

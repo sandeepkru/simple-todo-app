@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
@@ -75,11 +77,11 @@ const TodoList: React.FC = () => {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-6 text-center">Todo List</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center text-foreground">Todo List</h1>
       <TodoForm onAdd={addTodo} />
       
       <div className="flex justify-between items-center mt-6 mb-4">
-        <span className="text-sm text-gray-600">
+        <span className="text-sm text-foreground">
           {activeTodosCount} {activeTodosCount === 1 ? 'task' : 'tasks'} remaining
         </span>
         <div className="flex space-x-2">
@@ -88,7 +90,7 @@ const TodoList: React.FC = () => {
             className={`px-3 py-1 text-sm rounded ${
               filter === 'all'
                 ? 'bg-blue-500 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
             }`}
           >
             All
@@ -98,7 +100,7 @@ const TodoList: React.FC = () => {
             className={`px-3 py-1 text-sm rounded ${
               filter === 'active'
                 ? 'bg-blue-500 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
             }`}
           >
             Active
@@ -108,7 +110,7 @@ const TodoList: React.FC = () => {
             className={`px-3 py-1 text-sm rounded ${
               filter === 'completed'
                 ? 'bg-blue-500 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
             }`}
           >
             Completed
@@ -118,7 +120,7 @@ const TodoList: React.FC = () => {
 
       <div className="mt-4">
         {filteredTodos.length === 0 ? (
-          <p className="text-center text-gray-500">
+          <p className="text-center text-gray-500 dark:text-gray-400">
             {filter === 'all'
               ? 'No tasks yet. Add one above!'
               : filter === 'active'
@@ -144,7 +146,7 @@ const TodoList: React.FC = () => {
         <div className="mt-6 text-center">
           <button
             onClick={clearCompleted}
-            className="px-4 py-2 text-sm bg-red-100 text-red-600 rounded hover:bg-red-200"
+            className="px-4 py-2 text-sm bg-red-100 text-red-600 rounded hover:bg-red-200 dark:bg-red-900 dark:text-red-300 dark:hover:bg-red-800"
           >
             Clear Completed
           </button>
